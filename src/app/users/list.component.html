@@ -1,0 +1,33 @@
+<h1>Tickers</h1>
+<a routerLink="add" class="btn btn-sm btn-success mb-2">ticker list</a>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th style="width: 30%">country</th>
+      <th style="width: 30%">industry</th>
+      <th style="width: 30%">name</th>
+      <th style="width: 30%">sybmbol</th>
+      <th style="width: 10%"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let ticker of tickers">
+      <td>{{ ticker.country }}</td>
+      <td>{{ ticker.industry }}</td>
+      <td>{{ ticker.name }}</td>
+      <td>{{ ticker.symbol }}</td>
+      <!-- <td style="white-space: nowrap">
+                <a routerLink="edit/{{tickerId.id}}" class="btn btn-sm btn-primary mr-1">Edit</a>
+                <button (click)="deleteUser(ticker.id)" class="btn btn-sm btn-danger btn-delete-user" [disabled]="user.isDeleting">
+                    <span *ngIf="ticker.isDeleting" class="spinner-border spinner-border-sm"></span>
+                    <span *ngIf="!user.isDeleting">Delete</span>
+                </button>
+            </td> -->
+    </tr>
+    <tr *ngIf="!users">
+      <td colspan="4" class="text-center">
+        <span class="spinner-border spinner-border-lg align-center"></span>
+      </td>
+    </tr>
+  </tbody>
+</table>
